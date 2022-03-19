@@ -1,12 +1,11 @@
-const io = require("socket.io")(httpServer, {
+const io = require("socket.io")({
     cors: {
       origin: "https://distracted-ramanujan-70b89a.netlify.app/",
-      methods: ["GET", "POST"],
-      credentials: true
+        // origin: "http://127.0.0.1:5500",
+      methods: ["GET", "POST"]
     }
   });
 
-const cors = require('cors');
 const { gameLoop, getUpdatedVelocity, initGame } = require('./game');
 const { FRAME_RATE } = require('./constant');
 const { makeid } = require('./util');

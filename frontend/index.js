@@ -2,9 +2,8 @@ const BG_COLOR = '#231f20';
 const SNAKE_COLOR = '#c2c2c2';
 const FOOD_COLOR = '#e66916';
 
-const socket = io('https://radiant-cove-94023.herokuapp.com/', {
-    withCredentials: true
-  })
+const socket = io('https://radiant-cove-94023.herokuapp.com/')
+// const socket = io('http://localhost:3003');
 
 socket.on('init', handleInit);
 socket.on('gameState', handleGameState);
