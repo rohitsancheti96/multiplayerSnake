@@ -1,6 +1,8 @@
+const port = process.env.PORT || 3003;
+
 const io = require("socket.io")({
     cors: {
-      origin: "https://distracted-ramanujan-70b89a.netlify.app/",
+      origin: `https://distracted-ramanujan-70b89a.netlify.app:${port}`,
         // origin: "http://127.0.0.1:5500",
       methods: ["GET", "POST"]
     }
@@ -104,4 +106,4 @@ function emitGameOver(roomName, winner){
     io.sockets.in(roomName).emit('gameOver', JSON.stringify({winner}));
 }
 
-io.listen(process.env.PORT || 3003);
+io.listen(port || 3003);
