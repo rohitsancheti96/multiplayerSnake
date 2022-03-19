@@ -2,8 +2,7 @@ const port = process.env.PORT || 3003;
 
 const io = require("socket.io")({
     cors: {
-      origin: `https://distracted-ramanujan-70b89a.netlify.app:${port}`,
-        // origin: "http://127.0.0.1:5500",
+      origin: "https://distracted-ramanujan-70b89a.netlify.app",
       methods: ["GET", "POST"]
     }
   });
